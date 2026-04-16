@@ -1,8 +1,7 @@
 # Microsoft Fabric Enterprise Naming Convention Standard
 
 **Version:** 1.0  
-**Effective Date:** April 2026  
-**Classification:** Internal — Governance Standard
+**Revised Date:** April 15, 2026  
 
 ---
 
