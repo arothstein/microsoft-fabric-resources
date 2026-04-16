@@ -264,7 +264,7 @@ Or, for dashboards intended for embedded or app distribution, omit the prefix en
 
 ## 4. Lakehouse Tables, Columns, Files, and Folder Structure
 
-The naming standard for artifacts (§3) gets objects organized in the workspace. This section goes one level deeper—into the data objects *inside* each lakehouse. This is where the day-to-day work of data engineers and analysts lives, and where poor naming causes the most pain: ambiguous table names, broken columns, ungovernable file sprawl, and queries that nobody can read six months later.
+The naming standard for artifacts (Section 3) gets objects organized in the workspace. This section goes one level deeper—into the data objects *inside* each lakehouse. This is where the day-to-day work of data engineers and analysts lives, and where poor naming causes the most pain: ambiguous table names, broken columns, ungovernable file sprawl, and queries that nobody can read six months later.
 
 > **Key Technical Constraint:** Microsoft Fabric Lakehouse uses Delta Lake as its default table format. Delta tables (and their underlying Parquet files) do not support spaces or most special characters in table names or column names. Fabric's Dataflow Gen2 will silently drop columns that contain unsupported characters unless you explicitly fix them during ingestion. Always design names to be compatible with the most restrictive layer of the stack.
 
@@ -437,7 +437,7 @@ For tables that support pipeline operations but are not part of the bronze/silve
 | **Case** | All lowercase with underscores: `order_date`, `customer_id`, `total_amount` |
 | **No spaces** | Delta/Parquet will reject or silently drop columns with spaces. Fabric's Dataflow Gen2 can auto-fix unsupported characters to underscores, but this produces ugly names like `Amount__USD_`. Clean column names at the source or in transformation logic. |
 | **No special characters** | Avoid parentheses, brackets, periods, dollar signs, percent signs, and any non-alphanumeric characters other than underscores. |
-| **Be explicit** | Use full words where practical. `customer_id` is better than `cust_id`; `order_date` is better than `ord_dt`. Short abbreviations are acceptable for very common terms (see §4.4.3). |
+| **Be explicit** | Use full words where practical. `customer_id` is better than `cust_id`; `order_date` is better than `ord_dt`. Short abbreviations are acceptable for very common terms (see Section 4.4.3). |
 | **No reserved words** | Avoid Spark SQL and T-SQL reserved words as column names (e.g., `date`, `timestamp`, `order`, `table`, `user`). Add a qualifier: `order_date`, `user_name`, `record_timestamp`. |
 
 #### 4.4.2 Standard Column Suffixes
@@ -840,7 +840,7 @@ Maintain a single source of truth for all approved abbreviations. Below is the s
 Microsoft Fabric's Deployment Pipelines feature auto-pairs artifacts between stages by name. Therefore:
 
 - **Do NOT include the environment (dev/test/prod) in artifact names.** If you do, auto-pairing breaks and you must manually reconfigure mappings after every deployment.
-- **DO include the environment in workspace names** (via the `[Dev]`, `[Test]` suffix per §3.1). This cleanly separates environments without creating naming divergence inside the workspace.
+- **DO include the environment in workspace names** (via the `[Dev]`, `[Test]` suffix per Section 3.1). This cleanly separates environments without creating naming divergence inside the workspace.
 
 This recommendation aligns with the XTIVIA framework, which deliberately omitted environment from artifact names to preserve Deployment Pipeline compatibility.
 
