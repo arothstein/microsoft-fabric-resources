@@ -30,9 +30,9 @@ These rules apply universally to every named object in the Fabric environment.
 |---|---|
 | **Case** | All lowercase. This aligns with Microsoft Azure's recommendation and avoids issues with case-sensitive systems (e.g., Spark, Delta Lake, SQL endpoints). |
 | **Separator** | Use underscores (`_`) to separate naming segments. Lakehouses—the most restrictive artifact—only allow alphanumeric characters and underscores, and the first character must be a letter. Adopting the most restrictive rule across all artifact types ensures consistency. |
-| **Prohibited characters** | No spaces, hyphens, periods, parentheses, or other special characters in artifact names. (Workspaces are an exception—see §3.1.) |
+| **Prohibited characters** | No spaces, hyphens, periods, parentheses, or other special characters in artifact names. (Workspaces are an exception—see Section 3.1.) |
 | **Length** | Keep names under 80 characters. Fabric UIs truncate long names, making them hard to scan. |
-| **Abbreviations** | Use an approved abbreviation registry (see §5). If you abbreviate a term once, abbreviate it everywhere. Never invent one-off abbreviations. |
+| **Abbreviations** | Use an approved abbreviation registry (see Section 5). If you abbreviate a term once, abbreviate it everywhere. Never invent one-off abbreviations. |
 
 ### 2.2 Naming Formula
 
